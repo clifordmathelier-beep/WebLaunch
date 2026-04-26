@@ -1,0 +1,167 @@
+---
+import { Image } from "astro:assets";
+import leafImage from "/src/assets/images/family2.jpg"; // Re-using a serene family image for the overlay
+---
+
+<section id="philosophy" class="philosophy">
+  <div class="section-container">
+    <div class="bento-grid">
+      <!-- Main Card -->
+      <div class="bento-card card-main">
+        <Image
+          src={leafImage}
+          alt="Serene background"
+          class="card-bg-img"
+          width={800}
+          height={800}
+        />
+        <div class="card-content">
+          <h2 class="section-title text-white">Our Philosophy</h2>
+          <p class="text-white opacity-90">
+            Parenting is not a perfect science; it is a gradual uncovering of your innate intuition. We focus on the holistic vista of your family life, guiding you through the complexities of child development.
+          </p>
+        </div>
+      </div>
+
+      <!-- Small Card 1 -->
+      <div class="bento-card card-small card-reflection">
+        <h3 class="card-title">Deep Reflection</h3>
+        <p class="card-desc">Looking backward to understand your child's behavior, and looking forward to shape their growth with intention.</p>
+      </div>
+
+      <!-- Small Card 2 -->
+      <div class="bento-card card-small card-haven">
+        <h3 class="card-title">Safe Haven</h3>
+        <p class="card-desc">An atmosphere of absolute non-judgment where every parenting challenge is valid, heard, and explored together.</p>
+      </div>
+
+      <!-- Wide Card -->
+      <div class="bento-card card-wide card-approach">
+        <h3 class="card-title">Modern Approach</h3>
+        <p class="card-desc">We combine traditional developmental science with mindfulness and cognitive-behavioral techniques to provide a comprehensive, modern parenting toolkit tailored for today's families.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .philosophy {
+    background-color: var(--color-background);
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: var(--px-24);
+  }
+
+  .bento-card {
+    border-radius: var(--radius-lg);
+    padding: var(--px-32);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--px-12);
+    color: var(--color-text-primary);
+  }
+
+  .card-desc {
+    color: var(--color-text-secondary);
+    font-size: var(--text-base);
+  }
+
+  /* Specific Cards */
+  .card-main {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: var(--color-primary);
+    min-height: 25rem;
+    justify-content: flex-end;
+  }
+
+  .card-main .section-title {
+    margin-bottom: var(--px-16);
+    color: var(--color-white);
+  }
+
+  .card-main .text-white {
+    color: var(--color-white);
+  }
+
+  .card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    z-index: 0;
+  }
+
+  .card-main .card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-small {
+    grid-column: span 2;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .card-reflection {
+    background-color: rgba(252, 226, 139, 0.3); /* vista-yellow with opacity */
+    border-color: var(--color-mellow-yellow);
+  }
+
+  .card-haven {
+    background-color: rgba(147, 209, 200, 0.3); /* vista-aqua with opacity */
+    border-color: var(--color-soft-aqua);
+  }
+
+  .card-wide {
+    grid-column: span 4;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-dusty-lavender);
+    flex-direction: row;
+    align-items: center;
+    gap: var(--px-32);
+  }
+
+  .card-wide .card-title {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .card-wide .card-desc {
+    flex: 2;
+  }
+
+  @media screen and (max-width: 64rem) {
+    .bento-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .card-main,
+    .card-small,
+    .card-wide {
+      grid-column: span 1;
+      grid-row: auto;
+    }
+
+    .card-wide {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--px-16);
+    }
+  }
+</style>

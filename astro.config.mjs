@@ -43,14 +43,14 @@ export default defineConfig({
         "base-uri 'self'",
         "img-src 'self' https://res.cloudinary.com/dellp9a4z/ data:",
         "media-src 'self' https://res.cloudinary.com/dellp9a4z/",
-        "font-src 'self' data:",
+        "font-src 'self' https://fonts.gstatic.com data:",
         "frame-src 'self' https://www.google.com/",
         "worker-src 'self'",
         "manifest-src 'none'",
         "form-action 'self'",
       ],
       styleDirective: {
-        resources: ["'self'", "'unsafe-hashes'"],
+        resources: ["'self'", "https://fonts.googleapis.com", "'unsafe-hashes'"],
         hashes: [
           "sha256-WUDfWmQP7MHmJVPG87eP2N5ZE7RjDV9+6B/uKHMlSAE=",
           "sha256-P+wlFJoxzaX+ilJ24YqyBBK/sG4spb5yZWdYMQspG1I=",

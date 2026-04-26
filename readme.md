@@ -1,6 +1,6 @@
-# One Space Away - Interior Design Template
+# Multi Clarity - Parenting Support Portal
 
-**One Space Away** is single-page template built for interior designers, architects, and home stylists.
+**Multi Clarity** is a professional parent-support and consultation portal based in Orlando, Florida. It is built with a serene, modern "beach vibes" aesthetic.
 
 ## Getting Started
 
@@ -88,37 +88,15 @@ import { CldImage } from 'astro-cloudinary';
 />
 ```
 
-## Fonts
+## Fonts & Theming
 
-All local fonts are stored in `src/assets/fonts/`. To add or change fonts:
+The site uses a serene "beach vibes" color palette configured in `src/styles/_variables.css`.
 
-1. Drop your `.woff2` files into the fonts folder.
-2. Update the `astro.config.mjs` font provider:
+Typography is powered by Google Fonts:
+- **Newsreader** (Serif) for headings to provide an elegant, established feel.
+- **Manrope** (Sans-Serif) for body text and buttons for clean readability.
 
-```mjs
-fonts: [
-    {
-      provider: fontProviders.local(),
-      name: "YourFontName",
-      cssVariable: "--font-custom",
-      options: {
-        variants: [{
-            src: ["./src/assets/fonts/YourFont.woff2"],
-            weight: "normal",
-            style: "normal",
-          }],
-      },
-    },
-  ],
-```
-
-3. Update the variable in `src/styles/_reset.css`:
-
-```css
-font-family: var(--font-custom), system-ui, sans-serif;
-```
-
-*For more info on using remote fonts (Google Fonts, etc.), check the [Astro Font Provider Reference](https://docs.astro.build/en/reference/font-provider-reference/).*
+These fonts are loaded securely via `src/layouts/BaseLayout.astro`, and the Astro Content Security Policy in `astro.config.mjs` is configured to whitelist `https://fonts.googleapis.com`.
 
 ## Technical Details
 

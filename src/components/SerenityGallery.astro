@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import sunset1 from "/src/assets/images/sunset1.jpg";
+import sunset2 from "/src/assets/images/sunset2.jpg";
+import sunset3 from "/src/assets/images/sunset3.jpg";
+
+const galleryImages = [
+  { src: sunset1, alt: "Serene beach sunset reflecting on the water" },
+  { src: sunset2, alt: "Calm waves crashing during a beautiful sunset" },
+  { src: sunset3, alt: "Peaceful shoreline at dusk" }
+];
+---
+
+<section id="serenity-gallery" class="serenity-gallery">
+  <div class="section-container">
+    <div class="gallery-header">
+      <span class="section-tag">MOMENTS OF CALM</span>
+      <h2 class="section-title">Find your center.</h2>
+    </div>
+    
+    <div class="gallery-grid">
+      {galleryImages.map((image, idx) => (
+        <div class="gallery-item">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={800}
+            height={600}
+            class="media gallery-img"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .serenity-gallery {
+    background-color: var(--color-background);
+  }
+
+  .gallery-header {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto var(--px-48);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--px-24);
+  }
+
+  .gallery-item {
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-long);
+  }
+
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 64rem) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 48rem) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: var(--px-32);
+    }
+
+    .gallery-item {
+      aspect-ratio: 3/2;
+    }
+  }
+</style>

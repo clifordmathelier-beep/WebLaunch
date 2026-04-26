@@ -31,7 +31,7 @@ html,
     -webkit-text-size-adjust: 100%; /* 2 */
     tab-size: 4; /* 3 */
     font-family:
-        var(--font-dm-sans), Helvetica, ui-sans-serif, system-ui, sans-serif,
+        var(--font-sans), Helvetica, ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji"; /* 4 */
     font-feature-settings: var(--default-font-feature-settings, normal); /* 5 */
