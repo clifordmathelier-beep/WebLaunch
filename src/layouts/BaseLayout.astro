@@ -49,7 +49,7 @@ const schemaData = {
 ---
 
 <!doctype html>
-<html lang=`${SITE.LOCALE ?? "en"}`>
+<html lang=`${SITE.LOCALE ?? "en"}` data-theme="light">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -93,6 +93,16 @@ const schemaData = {
                 <meta property="twitter:creator" content={twitterHandle} />
             )
         }
+
+        <!-- Apply saved theme before first paint to avoid flash -->
+        <script is:inline>
+            (function () {
+                const saved = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = saved ?? (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
 
         <!-- Google JSON-LD Structured data -->
         <script

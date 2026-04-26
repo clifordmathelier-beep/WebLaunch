@@ -1,3 +1,7 @@
+---
+import { Image } from "astro:assets";
+import familyImage from "/src/assets/images/family1.jpg";
+---
 <section id="hero" class="hero">
     <div class="section-container hero-container">
         <div class="hero-content">
@@ -9,7 +13,7 @@
                 <a href="#contact" class="btn btn--primary"
                     >START TRANSFORMATION</a
                 >
-                <a href="#how-it-works" class="btns--secondary">
+                <a href="/Services" class="btns--secondary">
                     <span class="btn--secondary btn--secondary-unhovered">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +23,7 @@
                                 d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
                             ></path>
                         </svg>
-                        How It Works?
+                        View Services
                     </span>
                     <span
                         class="btn--secondary btn--secondary-hovered"
@@ -33,15 +37,15 @@
                                 d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
                             ></path>
                         </svg>
-                        How It Works?
+                        View Services
                     </span>
                 </a>
             </div>
         </div>
         <div class="video-wrapper">
-            <img
+            <Image
                 class="media"
-                src="/_astro/src/assets/images/family1.jpg"
+                src={familyImage}
                 alt="Happy family"
             />
         </div>

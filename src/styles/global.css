@@ -134,14 +134,14 @@ p {
   height: var(--px-8);
   border-radius: 50%;
   border: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--color-border-hover);
   cursor: pointer;
   padding: 0;
   transition: all var(--transition-long);
 }
 
 .indicator.active {
-  background-color: black;
+  background-color: var(--color-text-primary);
   transform: scale(1.5);
 }
 
