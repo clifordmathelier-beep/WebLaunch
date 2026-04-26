@@ -1,0 +1,214 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { Image } from "astro:assets";
+import consultationImage from "/src/assets/images/family1.jpg";
+import designImage from "/src/assets/images/family2.jpg";
+import transformImage from "/src/assets/images/family3.jpg";
+
+const services = [
+    {
+        id: 1,
+        title: "Child & Adolescent Development",
+        description:
+            "Guidance through key developmental milestones. We provide actionable strategies to handle behavioral challenges, emotional regulation, and transitions.",
+        image: {
+            src: consultationImage,
+            alt: "Family during a consultation",
+        },
+    },
+    {
+        id: 2,
+        title: "Bilingualism & Multicultural Dynamics",
+        description:
+            "Expert support for families navigating multiple languages and cultures. We help you create an environment where your child can thrive in their multicultural identity.",
+        image: {
+            src: designImage,
+            alt: "Parent receiving guidance",
+        },
+    },
+    {
+        id: 3,
+        title: "Parent-Child Interaction Therapy (PCIT)",
+        description:
+            "Specialized coaching to improve the quality of the parent-child relationship and teach parents specific skills to manage children's behavior problems.",
+        image: {
+            src: transformImage,
+            alt: "A happy family after applying strategies",
+        },
+    },
+    {
+        id: 4,
+        title: "Cognitive Behavioral Therapy (CBT) & ACT",
+        description:
+            "Evidence-based therapeutic approaches tailored to help your child manage anxiety, navigate complex emotions, and develop strong social-emotional skills.",
+        image: {
+            src: consultationImage,
+            alt: "Therapy session illustration",
+        },
+    },
+    {
+        id: 5,
+        title: "One-Time Consultations",
+        description:
+            "A focused session designed to cut through confusion and conflicting advice. Perfect for gaining perspective and guidance on a specific parenting challenge without a long-term commitment.",
+        image: {
+            src: designImage,
+            alt: "Consultation planning",
+        },
+    },
+];
+
+const certifications = [
+    "Licensed Clinical Psychologist",
+    "Certified PCIT International Therapist",
+    "Specialist in Bilingual & Multicultural Development",
+    "Trusted Provider at Maven Clinic"
+];
+---
+
+<BaseLayout>
+    <section id="services" class="process" style="padding-top: 10rem;">
+        <div class="section-container">
+            <div class="process-content">
+                <span class="section-tag">SERVICES</span>
+                <h2 class="section-title">Our Services & Expertise</h2>
+                
+                <div class="certifications-section">
+                    <h3 class="section-subtitle">Certifications & Affiliations</h3>
+                    <ul class="cert-list">
+                        {certifications.map(cert => (
+                            <li class="cert-item">
+                                <span class="cert-dot" aria-hidden="true"></span>
+                                {cert}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div class="process-steps" style="margin-top: 4rem;">
+                    {
+                        services.map((service) => (
+                            <div class="process-step">
+                                <div class="process-step-content">
+                                    <h3 class="section-subtitle process-step-title">
+                                        {service.title}
+                                    </h3>
+                                    <p class="process-step-description">
+                                        {service.description}
+                                    </p>
+                                </div>
+                                <div class="process-step-image-wrapper">
+                                    <Image
+                                        src={service.image.src}
+                                        alt={service.image.alt}
+                                        width={1272}
+                                        height={660}
+                                        class="media"
+                                    />
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .certifications-section {
+        margin-top: 2rem;
+        padding: 2rem;
+        background: var(--color-bg-secondary, #f9f9f9);
+        border-radius: var(--radius-lg);
+    }
+    .cert-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .cert-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: var(--text-base);
+        color: var(--color-text-dark);
+    }
+    .cert-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--color-focus);
+        flex-shrink: 0;
+    }
+
+    .process-steps {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-64);
+    }
+
+    .process-step {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--px-64);
+        align-items: center;
+    }
+
+    .process-step:nth-child(even) {
+        direction: rtl;
+    }
+
+    .process-step:nth-child(even) .process-step-content {
+        direction: ltr;
+    }
+
+    .process-step-title {
+        font-size: 1.313rem;
+    }
+
+    .process-step-description {
+        max-width: 31.25rem;
+    }
+
+    .process-step-image-wrapper {
+        width: 100%;
+        height: 100%;
+        max-height: 20.625rem;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 64rem) {
+        .process-step {
+            gap: var(--px-32);
+        }
+        .cert-list {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media screen and (max-width: 48rem) {
+        .process-steps {
+            gap: var(--px-36);
+        }
+
+        .process-step {
+            grid-template-columns: 1fr;
+            gap: var(--px-32);
+        }
+
+        .process-step:nth-child(even) {
+            direction: ltr;
+        }
+
+        .process-step-content {
+            order: -1;
+        }
+
+        .process-step-description {
+            max-width: 100%;
+        }
+    }
+</style>

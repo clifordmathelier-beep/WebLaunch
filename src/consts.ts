@@ -1,17 +1,17 @@
 import type { Site, Socials } from './types';
 
 export const SITE: Site = {
-  COMPANY_NAME: 'One Space Away',
-  LEGAL_NAME: 'One Space Away Interiors, LLC',
-  TITLE: 'Home, just the way you like.',
-  DESCRIPTION: 'Discover the joy of living in a space that feels truly yours.',
+  COMPANY_NAME: 'Multi Clarity',
+  LEGAL_NAME: 'Multi Clarity, LLC',
+  TITLE: 'Clarity for the moments that matter most',
+  DESCRIPTION: 'Discover strategies to empower your children and navigate development smoothly.',
   CANONICAL_URL: import.meta.env.DEV
     ? 'http://localhost:4321'
-    : 'https://one-space-away-html.pages.dev',
+    : 'https://multi-clarity-orlando.pages.dev',
   LOCALE: 'en',
-  TELEPHONE: '(310) 555-2389',
-  EMAIL: 'info@onespaceaway.com',
-  ADDRESS: '456 Camden Drive, Suite 300, Beverly Hills, CA 90210',
+  TELEPHONE: '(414) 555-1234',
+  EMAIL: 'info@multiclarity.com',
+  ADDRESS: '123 Orange Ave, Suite 200, Orlando, FL 32801',
 
   OG_IMAGE: '/og-image.webp',
 

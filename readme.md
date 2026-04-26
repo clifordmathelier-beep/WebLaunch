@@ -2,6 +2,38 @@
 
 **One Space Away** is single-page template built for interior designers, architects, and home stylists.
 
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v18 or later
+- [pnpm](https://pnpm.io/) (recommended) — install with `npm install -g pnpm`
+
+### Clean Install
+
+```bash
+# 1. Clone the repository
+git clone <your-repo-url>
+cd WebLaunch
+
+# 2. Install dependencies
+pnpm install
+
+# 3. Start the development server
+pnpm dev
+```
+
+The site will be available at **<http://localhost:4321>**.
+
+### Build for Production
+
+```bash
+pnpm build      # Outputs to dist/
+pnpm preview    # Preview the built site locally
+```
+
+> **Note:** Astro's Content Security Policy (CSP) is only active in the production build, not the dev server. Run `pnpm build && pnpm preview` to test CSP behaviour.
+
 <img width="1910" height="915" alt="PageSpeed Insights" src="https://github.com/user-attachments/assets/8b3bd9cf-6e91-4624-bda5-aa5cf71e950b" />
 
 **Features**

@@ -1,10 +1,10 @@
 ---
 import BaseSwiper from "./BaseSwiper.astro";
 import { Image } from "astro:assets";
-import before1Image from "/src/assets/images/before1.png";
-import after1Image from "/src/assets/images/after1.png";
-import before2Image from "/src/assets/images/before2.png";
-import after2Image from "/src/assets/images/after2.png";
+import before1Image from "/src/assets/images/family3.jpg";
+import after1Image from "/src/assets/images/family4.jpg";
+import before2Image from "/src/assets/images/family1.jpg";
+import after2Image from "/src/assets/images/family2.jpg";
 
 const projects = [
     {
@@ -21,12 +21,12 @@ const projects = [
         },
         info: {
             challenge: {
-                title: "Client's Challenge",
-                text: "We wanted to transform our unfinished space into a modern, functional home with an open-concept design that maximizes space, brings in plenty of natural light, and fits seamlessly into our daily lives.",
+                title: "Parent's Challenge",
+                text: "We were constantly struggling with our toddler's tantrums. It felt like every little transition was a battle, and we were exhausted, unsure of how to foster a more peaceful environment at home.",
             },
             result: {
                 title: "Result",
-                text: "Our home now feels more open and airy. The transformation has expanded our living area, making every room feel larger and brighter. With a design that prioritizes natural light, our home is now perfectly set up for everyday living and family moments.",
+                text: "After just one consultation, we implemented the recommended strategies. The tantrums decreased significantly, and our home is now filled with much more understanding and cooperation. We finally feel like capable parents.",
             },
         },
     },
@@ -44,12 +44,12 @@ const projects = [
         },
         info: {
             challenge: {
-                title: "Client's Challenge",
-                text: "Our kitchen felt outdated. The all-white design was plain, and the layout wasn't as functional as it could be. We wanted a space with better lighting that made cooking more enjoyable.",
+                title: "Parent's Challenge",
+                text: "Raising bilingual children was turning out to be harder than we thought. Our kids were resisting speaking our native language, and we felt disconnected from our cultural heritage.",
             },
             result: {
                 title: "Result",
-                text: "Now, our kitchen feels completely renewed. The improved lighting makes the space brighter and more welcoming, while the new wood-style elements fit perfectly with our vision.",
+                text: "With Multi Clarity's guidance, we found natural, engaging ways to integrate both languages into our daily routines. The resistance is gone, and our children are thriving in their multicultural environment.",
             },
         },
     },
@@ -58,8 +58,8 @@ const projects = [
 
 <section id="portfolio" class="portfolio">
     <div class="section-container">
-        <span class="section-tag">PORTFOLIO</span>
-        <h2 class="section-title">See the transformation.</h2>
+        <span class="section-tag">SUCCESS STORIES</span>
+        <h2 class="section-title">See the growth.</h2>
         <BaseSwiper sliderName="portfolio" beforeAfter>
             {
                 projects.map((project) => (

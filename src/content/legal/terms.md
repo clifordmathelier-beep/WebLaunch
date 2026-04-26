@@ -6,18 +6,18 @@ lastUpdated: '07-04-2025'
 > **Note:** This is just an example Terms of Service for a portfolio website
 > built with Astro and hosted on Cloudflare. The license part still applies.
 
-Welcome to One Space Away Interiors, LLC.  
+Welcome to Multi Clarity, LLC.  
 These Terms of Service outline the rules and regulations for the use of One
 Space Away Interiors, LLC's website.
 
-**One Space Away Interiors, LLC** is located at:
+**Multi Clarity, LLC** is located at:
 
-**456 Camden Drive, Suite 300  
-Beverly Hills, CA 90210  
+**123 Orange Ave, Suite 200  
+Orlando, FL 32801  
 California (CA), United States**
 
 By accessing this website, we assume you accept these Terms of Service in full.
-Do not continue to use One Space Away Interiors, LLC's website if you do not
+Do not continue to use Multi Clarity, LLC's website if you do not
 accept all of the terms stated on this page.
 
 The following terminology applies to these Terms of Service, the Privacy
@@ -41,7 +41,7 @@ are taken as interchangeable and therefore as referring to the same.
 
 ## Cookies
 
-We employ the use of cookies. By using One Space Away Interiors, LLC's website
+We employ the use of cookies. By using Multi Clarity, LLC's website
 you consent to the use of cookies in accordance with our Privacy Policy.
 
 Most modern interactive websites use cookies to enable us to retrieve user
@@ -51,21 +51,21 @@ partners may also use cookies.
 
 ## License
 
-Unless otherwise stated, One Space Away Interiors, LLC and/or its licensors own
+Unless otherwise stated, Multi Clarity, LLC and/or its licensors own
 the intellectual property rights for all material on our website. All
 intellectual property rights are reserved. You may view and/or print pages from
-[one-space-away-html.pages.dev](https://one-space-away-html.pages.dev/) for your
+[one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/) for your
 own personal use, subject to the restrictions set out in these Terms of Service.
 
 You must not:
 
 - Republish material from
-  [one-space-away-html.pages.dev](https://one-space-away-html.pages.dev/)
+  [one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/)
 - Sell, rent, or sub-license material from
-  [one-space-away-html.pages.dev](https://one-space-away-html.pages.dev/)
+  [one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/)
 - Reproduce, duplicate, or copy material from
-  [one-space-away-html.pages.dev](https://one-space-away-html.pages.dev/)
-- Redistribute content from One Space Away Interiors, LLC (unless content is
+  [one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/)
+- Redistribute content from Multi Clarity, LLC (unless content is
   specifically made for redistribution)
 
 ## User Comments
@@ -76,9 +76,9 @@ Certain parts of this website offer the opportunity for users to post and
 exchange opinions, information, material, and data ("Comments"). One Space Away
 Interiors, LLC does not screen, edit, publish, or review Comments prior to their
 appearance on the website, and Comments do not reflect the views or opinions of
-One Space Away Interiors, LLC, its agents, or affiliates. Comments reflect the
+Multi Clarity, LLC, its agents, or affiliates. Comments reflect the
 view and opinion of the person who posts such view or opinion. To the extent
-permitted by applicable laws, One Space Away Interiors, LLC shall not be
+permitted by applicable laws, Multi Clarity, LLC shall not be
 responsible or liable for the Comments or for any loss, cost, liability,
 damages, or expenses caused and/or suffered as a result of any use of, posting
 of, or appearance of the Comments on this website.
@@ -99,7 +99,7 @@ You warrant and represent that:
 - The Comments will not be used to solicit or promote business or custom or
   present commercial activities or unlawful activity.
 
-You hereby grant to One Space Away Interiors, LLC a non-exclusive, royalty-free
+You hereby grant to Multi Clarity, LLC a non-exclusive, royalty-free
 license to use, reproduce, edit, and authorize others to use, reproduce, and
 edit any of your Comments in any and all forms, formats, or media.
 
@@ -140,7 +140,7 @@ organizations such as:
 
 If you are among the organizations listed above and are interested in linking to
 our website, please notify us by sending an email to
-[info@onespaceaway.com](mailto:info@onespaceaway.com). Please include your name,
+[info@multiclarity.com](mailto:info@multiclarity.com). Please include your name,
 your organization’s name, contact information (such as a phone number and/or
 email address), the URL of your site, a list of any URLs from which you intend
 to link to our website, and a list of the URLs on our site to which you would
@@ -154,7 +154,7 @@ Approved organizations may hyperlink to our website as follows:
   that makes sense within the context and format of content on the linking
   party's site.
 
-No use of One Space Away Interiors, LLC's logo or other artwork will be allowed
+No use of Multi Clarity, LLC's logo or other artwork will be allowed
 for linking without a trademark license agreement.
 
 ## Iframes
