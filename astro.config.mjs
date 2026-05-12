@@ -10,9 +10,10 @@ export default defineConfig({
   site: SITE.CANONICAL_URL,
   output: "static",
 
-  build: {
-    inlineStylesheets: "always",
-  },
+  // Do not use inlineStylesheets: "always" with <ClientRouter />: inlined <style>
+  // blocks are not merged reliably on client navigations, causing unstyled pages
+  // until a full reload. Default "auto" emits <link rel="stylesheet"> chunks the
+  // transition router can attach correctly.
 
   fonts: [
     {
