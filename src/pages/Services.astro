@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { Image } from "astro:assets";
-import consultationImage from "/src/assets/images/family1.jpg";
-import designImage from "/src/assets/images/family2.jpg";
-import transformImage from "/src/assets/images/family3.jpg";
+import cadImage from "/src/assets/images/CAD.jpg";
+import multilangImage from "/src/assets/images/multilang.jpg";
+import pcitImage from "/src/assets/images/PCIT.jpg";
+import onetimeConsultImage from "/src/assets/images/onetimeconsult.jpg";
 
 const services = [
     {
@@ -12,8 +13,8 @@ const services = [
         description:
             "Guidance through key developmental milestones. We provide actionable strategies to handle behavioral challenges, emotional regulation, and transitions.",
         image: {
-            src: consultationImage,
-            alt: "Family during a consultation",
+            src: cadImage,
+            alt: "Child and adolescent development support.",
         },
     },
     {
@@ -22,8 +23,8 @@ const services = [
         description:
             "Expert support for families navigating multiple languages and cultures. We help you create an environment where your child can thrive in their multicultural identity.",
         image: {
-            src: designImage,
-            alt: "Parent receiving guidance",
+            src: multilangImage,
+            alt: "Bilingual and multicultural family support.",
         },
     },
     {
@@ -32,8 +33,8 @@ const services = [
         description:
             "Specialized coaching to improve the quality of the parent-child relationship and teach parents specific skills to manage children's behavior problems.",
         image: {
-            src: transformImage,
-            alt: "A happy family after applying strategies",
+            src: pcitImage,
+            alt: "Parent and child interaction coaching.",
         },
     },
     {
@@ -42,8 +43,8 @@ const services = [
         description:
             "Evidence-based therapeutic approaches tailored to help your child manage anxiety, navigate complex emotions, and develop strong social-emotional skills.",
         image: {
-            src: consultationImage,
-            alt: "Therapy session illustration",
+            src: onetimeConsultImage,
+            alt: "Therapeutic support for anxiety, emotions, and social-emotional skills.",
         },
     },
     {
@@ -52,8 +53,8 @@ const services = [
         description:
             "A focused session designed to cut through confusion and conflicting advice. Perfect for gaining perspective and guidance on a specific parenting challenge without a long-term commitment.",
         image: {
-            src: designImage,
-            alt: "Consultation planning",
+            src: onetimeConsultImage,
+            alt: "Focused one-time parenting consultation.",
         },
     },
 ];
@@ -178,6 +179,11 @@ const certifications = [
         height: 100%;
         max-height: 20.625rem;
         overflow: hidden;
+    }
+
+    .process-step-image-wrapper :global(img) {
+        object-fit: cover;
+        object-position: center top;
     }
 
     @media screen and (max-width: 64rem) {

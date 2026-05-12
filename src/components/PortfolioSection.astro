@@ -1,10 +1,10 @@
 ---
 import BaseSwiper from "./BaseSwiper.astro";
 import { Image } from "astro:assets";
-import before1Image from "/src/assets/images/family3.jpg";
-import after1Image from "/src/assets/images/family4.jpg";
+import before1Image from "/src/assets/images/olivia-bauso-6oRBgkX9UMI-unsplash.jpg";
+import after1Image from "/src/assets/images/family1.jpg";
 import before2Image from "/src/assets/images/family1.jpg";
-import after2Image from "/src/assets/images/family2.jpg";
+import after2Image from "/src/assets/images/jessica-rockowitz-E4USFFAc_9A-unsplash.jpg";
 
 const projects = [
     {
@@ -16,7 +16,7 @@ const projects = [
             },
             after: {
                 src: after1Image,
-                alt: "A modern, open-concept living space with a wooden table, chairs, and a metal staircase. The room is lit by ceiling lights and natural sunlight from large windows.",
+                alt: "Family together in a calm, supportive home environment.",
             },
         },
         info: {
@@ -35,11 +35,11 @@ const projects = [
         images: {
             before: {
                 src: before2Image,
-                alt: "An older kitchen with white cabinets, beige tile flooring, and white appliances.",
+                alt: "Family together at home, reflecting on bilingual parenting challenges.",
             },
             after: {
                 src: after2Image,
-                alt: "A modern kitchen with dark wood cabinets, stainless steel appliances, and a stone backsplash.",
+                alt: "Parent and child sharing a calm, connected moment during daily life.",
             },
         },
         info: {
@@ -145,6 +145,7 @@ const projects = [
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center top;
         opacity: 0;
         transition: opacity var(--transition-long);
     }
