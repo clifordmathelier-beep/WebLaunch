@@ -1,240 +1,270 @@
 ---
-import { SITE, SOCIALS } from "@consts";
-import socialIcons from "@assets/socialIcons";
+import { SITE } from "@consts";
 
 const currentYear = new Date().getFullYear();
+const footerMission =
+    SITE.FOOTER_MISSION ??
+    SITE.DESCRIPTION;
+const bookingUrl = SITE.BOOKING_PORTAL_URL ?? "#";
+const telHref = `tel:${SITE.TELEPHONE.replace(/\D/g, "")}`;
 ---
 
 <footer class="main-footer">
-    <div class="section-container footer footer-primary">
-        <div class="footer-brand">
-            <a href="/" class="headline logo" aria-label="Multi Clarity home">
-                Multi Clarity
+    <div class="section-container footer-grid">
+        <div class="footer-col footer-col--brand">
+            <a href="/" class="footer-logo" aria-label="Multi-Clarity and Awareness LLC home">
+                <span class="footer-logo-mark" aria-hidden="true">
+                    <svg
+                        class="footer-logo-svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                        width="40"
+                        height="40"
+                        fill="none"
+                    >
+                        <circle cx="24" cy="24" r="22" fill="#F8B195"></circle>
+                        <circle
+                            cx="24"
+                            cy="24"
+                            r="11.5"
+                            stroke="#ffffff"
+                            stroke-width="1.35"
+                        ></circle>
+                        <polygon
+                            fill="#ffffff"
+                            points="24,12.5 29.2,24 24,35.5 18.8,24"
+                            transform="rotate(18 24 24)"
+                        ></polygon>
+                    </svg>
+                </span>
+                <span class="footer-logo-wordmark">Multi-Clarity</span>
             </a>
-            <p class="site-description">{SITE.DESCRIPTION}</p>
-
-            <address class="footer-nav-list contact-info">
-                <p class="phone">
-                    <span class="label">T.</span>
-                    <a href=`tel:${SITE.TELEPHONE}`>{SITE.TELEPHONE}</a>
-                </p>
-                <p class="email">
-                    <span class="label">E.</span>
-                    <a href=`mailto:${SITE.EMAIL}`>{SITE.EMAIL}</a>
-                </p>
-            </address>
+            <p class="footer-mission">{footerMission}</p>
         </div>
 
-        <nav class="footer-navigation" aria-label="Footer navigation">
-            <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Company</h2>
-                <ul class="footer-nav-list">
-                    <li>
-                        <a href="#hero" class="footer-link">Home</a>
-                    </li>
-                    <li>
-                        <a href="#bio" class="footer-link">Bio</a>
-                    </li>
-                    <li>
-                        <a href="/Services" class="footer-link">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="footer-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Social Media</h2>
-                <ul class="footer-nav-list social-links-list">
-                    {
-                        SOCIALS.map((social) => (
-                            <>
-                                <li class="social-item">
-                                    <a
-                                        href={social.HREF}
-                                        aria-label={social.LABEL}
-                                        class="footer-link social-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Fragment
-                                            set:html={socialIcons[social.ICON]}
-                                        />
-                                        {social.NAME}
-                                    </a>
-                                </li>
-                            </>
-                        ))
-                    }
-                </ul>
-            </div>
-
-            <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Legal & Press</h2>
-                <ul class="footer-nav-list">
-                    <li>
-                        <a href="legal/privacy" class="footer-link"
-                            >Privacy Policy</a
-                        >
-                    </li>
-                    <li>
-                        <a href="legal/terms" class="footer-link"
-                            >Terms & Conditions</a
-                        >
-                    </li>
-                    <li>
-                        <a href="/sitemap-index.xml" class="footer-link"
-                            >SiteMap</a
-                        >
-                    </li>
-                </ul>
-            </div>
+        <nav class="footer-col footer-col--links" aria-label="Quick links">
+            <h2 class="footer-heading">Quick links</h2>
+            <ul class="footer-link-list">
+                <li><a href="/" class="footer-link">Home</a></li>
+                <li><a href="/Bio" class="footer-link">About Us</a></li>
+                <li><a href="/Services" class="footer-link">Services</a></li>
+                <li><a href="/FAQ" class="footer-link">FAQ</a></li>
+                <li><a href="/Contact" class="footer-link">Contact</a></li>
+            </ul>
         </nav>
+
+        <div class="footer-col footer-col--contact">
+            <h2 class="footer-heading">Contact</h2>
+            <ul class="footer-contact-list">
+                <li class="footer-contact-item">
+                    <span class="footer-contact-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                            <path d="m2 7 10 7 10-7"></path>
+                        </svg>
+                    </span>
+                    <a href={`mailto:${SITE.EMAIL}`} class="footer-contact-text">{SITE.EMAIL}</a>
+                </li>
+                <li class="footer-contact-item">
+                    <span class="footer-contact-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </span>
+                    <a href={telHref} class="footer-contact-text">{SITE.TELEPHONE}</a>
+                </li>
+                <li class="footer-contact-item">
+                    <span class="footer-contact-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                            <line x1="16" x2="16" y1="2" y2="6"></line>
+                            <line x1="8" x2="8" y1="2" y2="6"></line>
+                            <line x1="3" x2="21" y1="10" y2="10"></line>
+                        </svg>
+                    </span>
+                    <a
+                        href={bookingUrl}
+                        class="footer-contact-text footer-contact-portal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Simple Practice Portal
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <div class="footer footer-secondary">
-        <div class="copyright">
-            <p>&copy; {SITE.COMPANY_NAME} {currentYear}.</p>
-        </div>
-        <div class="location">
-            <p>Based in Orlando, Florida.</p>
-        </div>
+    <div class="section-container footer-bottom">
+        <p class="footer-bottom-copy">
+            &copy; {currentYear} {SITE.COMPANY_NAME}.{" "}
+            <a href="/legal/privacy" class="footer-bottom-link">Privacy</a>
+            {" · "}
+            <a href="/legal/terms" class="footer-bottom-link">Terms</a>
+        </p>
     </div>
 </footer>
 
 <style>
-    a {
-        transition: all var(--transition-short);
-    }
-
-    a:active {
-        color: var(--color-text-primary);
-    }
-
     .main-footer {
-        background-color: var(--color-background);
-        padding-block: var(--px-112) var(--px-28);
+        --footer-bg: #1a435b;
+        --footer-accent: #e2a589;
+        --footer-muted: #a0b1c0;
+        --footer-heading: #e2a589;
+        background-color: var(--footer-bg);
+        padding-block: var(--px-96) var(--px-40);
         padding-inline: var(--px-64);
-        color: var(--color-text-dark);
+        color: var(--footer-muted);
+        font-family: var(--font-sans);
         font-size: var(--text-sm);
     }
 
-    .footer {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .headline {
-        color: var(--color-text-primary);
-    }
-
-    .main-footer p {
-        opacity: 1;
-    }
-
-    .footer-primary {
-        margin-bottom: var(--px-112);
-    }
-
-    .logo {
-        display: inline-block;
-        margin-bottom: var(--px-28);
-        font-size: var(--text-xl);
-        font-weight: 700;
-    }
-
-    .site-description {
-        margin-bottom: var(--px-32);
-    }
-
-    .footer-navigation {
+    .footer-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: space-between;
-        width: 100%;
-        margin-left: 16%;
-        gap: var(--px-96);
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.75fr) minmax(0, 1fr);
+        gap: clamp(var(--px-48), 6vw, var(--px-112));
+        align-items: start;
+    }
+
+    .footer-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--px-12);
+        text-decoration: none;
+        margin-bottom: var(--px-24);
+    }
+
+    .footer-logo-mark {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .footer-logo-svg {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .footer-logo-wordmark {
+        font-family: var(--font-serif);
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+    }
+
+    .footer-mission {
+        margin: 0;
+        max-width: 26rem;
+        line-height: 1.65;
+        color: var(--footer-muted);
+        font-size: var(--text-sm);
     }
 
     .footer-heading {
-        margin-bottom: var(--px-16);
-        font-size: var(--text-lg);
-        letter-spacing: -0.02em;
-        font-weight: 500;
-        text-wrap: nowrap;
+        margin: 0 0 var(--px-20);
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--footer-heading);
     }
 
-    .footer-nav-list {
-        display: inline-flex;
+    .footer-link-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
         flex-direction: column;
-        font-size: var(--text-sm);
-        gap: var(--px-8);
-        text-wrap: nowrap;
+        gap: var(--px-12);
     }
 
-    .social-link {
+    .footer-link {
+        color: var(--footer-muted);
+        text-decoration: none;
+        font-size: var(--text-sm);
+        transition: color var(--transition-short);
+    }
+
+    .footer-contact-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-16);
+    }
+
+    .footer-contact-item {
         display: flex;
         align-items: center;
-        gap: var(--px-6);
+        gap: var(--px-12);
     }
 
-    .social-link :global(svg) {
-        height: var(--px-18);
+    .footer-contact-icon {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--footer-muted);
     }
 
-    .contact-info {
-        font-style: normal;
+    .footer-contact-icon svg {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 
-    .footer-secondary {
-        font-weight: 500;
+    .footer-contact-text {
+        color: var(--footer-muted);
+        text-decoration: none;
+        font-size: var(--text-sm);
+        transition: color var(--transition-short);
+    }
+
+    .footer-contact-portal {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+
+    .footer-bottom {
+        margin-top: var(--px-64);
+        padding-top: var(--px-28);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom-copy {
+        margin: 0;
+        font-size: var(--text-xs);
+        color: rgba(160, 177, 192, 0.85);
+    }
+
+    .footer-bottom-link {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
     }
 
     @media (hover: hover) and (pointer: fine) {
-        a:hover {
-            color: var(--color-text-primary);
+        .footer-link:hover,
+        .footer-contact-text:hover,
+        .footer-bottom-link:hover {
+            color: var(--footer-accent);
         }
     }
 
-    @media screen and (max-width: 64rem) {
+    @media screen and (max-width: 59.375rem) {
         .main-footer {
-            padding-top: var(--px-80);
             padding-inline: var(--px-28);
+            padding-block: var(--px-80) var(--px-32);
         }
 
-        .footer {
-            flex-wrap: wrap;
-            gap: var(--px-48);
-        }
-
-        .footer-navigation {
-            margin-left: 0;
-            width: auto;
-        }
-
-        .footer-primary {
-            margin-bottom: var(--px-80);
-        }
-    }
-
-    @media screen and (max-width: 37.5rem) {
-        .main-footer {
-            padding-top: var(--px-64);
-        }
-
-        .footer-navigation {
+        .footer-grid {
             grid-template-columns: 1fr;
-            width: 100%;
-            gap: var(--px-28);
+            gap: var(--px-40);
         }
 
-        .footer-secondary {
-            gap: var(--px-6) var(--px-48);
-        }
-
-        .footer-primary {
-            margin-bottom: var(--px-48);
+        .footer-bottom {
+            margin-top: var(--px-48);
         }
     }
 </style>

@@ -10,6 +10,10 @@ export type Site = {
   TELEPHONE: string;
   EMAIL: string;
   ADDRESS: string;
+  /** Client portal (e.g. Simple Practice) for booking */
+  BOOKING_PORTAL_URL?: string;
+  /** Short mission blurb in the site footer */
+  FOOTER_MISSION?: string;
   OG_IMAGE: string;
 
   TWITTER?: {

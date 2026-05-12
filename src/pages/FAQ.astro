@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import FAQ from '@components/FAQ.astro';
+import { SITE } from '@consts';
+---
+
+<BaseLayout
+  title={`${SITE.COMPANY_NAME}: FAQ`}
+  description="Answers to common questions about consultations, services, and working with Multi-Clarity."
+>
+  <div class="page-top-pad">
+    <FAQ />
+  </div>
+</BaseLayout>
+
+<style>
+  .page-top-pad {
+    padding-top: 10rem;
+  }
+</style>

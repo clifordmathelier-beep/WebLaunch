@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ContactUsSection from '@components/ContactUsSection.astro';
+import { SITE } from '@consts';
+---
+
+<BaseLayout
+  title={`${SITE.COMPANY_NAME}: Contact`}
+  description="Get in touch to book a consultation or ask about services."
+>
+  <div class="page-top-pad">
+    <ContactUsSection />
+  </div>
+</BaseLayout>
+
+<style>
+  .page-top-pad {
+    padding-top: 10rem;
+  }
+</style>

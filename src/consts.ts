@@ -12,6 +12,9 @@ export const SITE: Site = {
   TELEPHONE: '(414) 555-1234',
   EMAIL: 'info@multiclarity.com',
   ADDRESS: '123 Orange Ave, Suite 200, Orlando, FL 32801',
+  BOOKING_PORTAL_URL: 'https://www.simplepractice.com',
+  FOOTER_MISSION:
+    'Providing compassionate parent consultations and developmental resources. Our mission is to normalize the journey and bring clarity to childhood development.',
 
   OG_IMAGE: '/og-image.webp',
 
