@@ -150,6 +150,30 @@ const schemaData = {
             <slot />
         </main>
         <Footer />
+        <script is:inline>
+            (function () {
+                if (window.__oneSpaceThemeNavListeners) return;
+                window.__oneSpaceThemeNavListeners = true;
+                function themeFromStorage() {
+                    var saved = localStorage.getItem("theme");
+                    var prefersDark = window.matchMedia(
+                        "(prefers-color-scheme: dark)",
+                    ).matches;
+                    return saved ?? (prefersDark ? "dark" : "light");
+                }
+                document.addEventListener("astro:before-swap", function (event) {
+                    var theme = themeFromStorage();
+                    var root = event.newDocument?.documentElement;
+                    if (root) root.setAttribute("data-theme", theme);
+                });
+                document.addEventListener("astro:after-swap", function () {
+                    document.documentElement.setAttribute(
+                        "data-theme",
+                        themeFromStorage(),
+                    );
+                });
+            })();
+        </script>
     </body>
 </html>
 
