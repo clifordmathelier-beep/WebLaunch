@@ -140,7 +140,7 @@ organizations such as:
 
 If you are among the organizations listed above and are interested in linking to
 our website, please notify us by sending an email to
-[info@multiclarity.com](mailto:info@multiclarity.com). Please include your name,
+[drchristineandre@gmail.com](mailto:drchristineandre@gmail.com). Please include your name,
 your organization’s name, contact information (such as a phone number and/or
 email address), the URL of your site, a list of any URLs from which you intend
 to link to our website, and a list of the URLs on our site to which you would

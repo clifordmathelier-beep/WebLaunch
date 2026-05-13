@@ -9,8 +9,8 @@ export const SITE: Site = {
     ? 'http://localhost:4321'
     : 'https://multi-clarity-orlando.pages.dev',
   LOCALE: 'en',
-  TELEPHONE: '(414) 555-1234',
-  EMAIL: 'info@multiclarity.com',
+  TELEPHONE: '(617) 651-0615',
+  EMAIL: 'drchristineandre@gmail.com',
   ADDRESS: '123 Orange Ave, Suite 200, Orlando, FL 32801',
   BOOKING_PORTAL_URL: 'https://www.simplepractice.com',
   FOOTER_MISSION:
