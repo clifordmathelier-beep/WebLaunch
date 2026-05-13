@@ -10,6 +10,10 @@ export default defineConfig({
   site: SITE.CANONICAL_URL,
   output: "static",
 
+  markdown: {
+    syntaxHighlight: false,
+  },
+
   // Do not use inlineStylesheets: "always" with <ClientRouter />: inlined <style>
   // blocks are not merged reliably on client navigations, causing unstyled pages
   // until a full reload. Default "auto" emits <link rel="stylesheet"> chunks the
@@ -48,7 +52,7 @@ export default defineConfig({
         "frame-src 'self' https://www.google.com/",
         "worker-src 'self'",
         "manifest-src 'none'",
-        "form-action 'self'",
+        "form-action 'self' mailto:",
       ],
       styleDirective: {
         resources: ["'self'", "https://fonts.googleapis.com", "'unsafe-hashes'"],

@@ -32,18 +32,24 @@ const faqItems = [
   },
   {
     id: 6,
+    question: 'Do you provide an official diagnosis or meet with my child?',
+    answer:
+      'General parent consultations are 90 minutes and include a written report with individualized recommendations tailored to your questions and goals.\n\nThis service is not diagnostic. I do not provide a formal diagnosis for your child, and I do not meet with your child as part of this consultation model.\n\nIf your child already has a mental health or medical diagnosis and you are on a waitlist or are still seeking a provider, I can offer evidence-based resources (for example, books, workbooks, and podcasts) and help you explore provider options that fit your child\'s situation. This guidance does not replace a diagnostic evaluation and does not serve as a pre-treatment intake for therapy services.\n\nIf you suspect your child may have a clinical concern but has not yet been evaluated, and you would like parent-focused strategies to use at home or you are awaiting an evaluation, this consultation may be a good fit—within the boundaries described above.',
+  },
+  {
+    id: 7,
     question: 'Do you offer virtual consultations?',
     answer:
       'Yes. All sessions are available virtually, so it doesn\'t matter where you\'re based. Most parents actually find video calls easier to fit around family life.',
   },
   {
-    id: 7,
+    id: 8,
     question: 'What\'s your background and training?',
     answer:
       'I hold a PhD in Clinical Psychology from Suffolk University and trained at Boston Children\'s Hospital and Harvard Medical School. I\'m a Certified PCIT Therapist and have over 15 years of experience working with children, adolescents, and families across clinical and research settings.',
   },
   {
-    id: 8,
+    id: 9,
     question: 'How do I get started?',
     answer:
       'Just reach out by email or phone — you\'ll find the details in the contact section below. We\'ll find a time that works for you and take it from there.',
@@ -61,28 +67,45 @@ const faqItems = [
     <div class="faq-content">
       <div class="accordion">
         {
-          faqItems.map(item => (
-            <div class="accordion-item">
-              <button class="accordion-button">
-                <span class="button-text">{item.question}</span>
-                <svg
-                  class="button-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
+          faqItems.map((item) => {
+            const triggerId = `faq-trigger-${item.id}`;
+            const panelId = `faq-panel-${item.id}`;
+            return (
+              <div class="accordion-item">
+                <button
+                  type="button"
+                  class="accordion-button"
+                  id={triggerId}
+                  aria-expanded="false"
+                  aria-controls={panelId}
                 >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-              </button>
-              <div class="accordion-content">
-                <div class="content-wrapper">
-                  <p>{item.answer}</p>
+                  <span class="button-text">{item.question}</span>
+                  <svg
+                    class="button-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </button>
+                <div
+                  class="accordion-content"
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={triggerId}
+                  aria-hidden="true"
+                >
+                  <div class="content-wrapper">
+                    <p>{item.answer}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
+            );
+          })
         }
       </div>
     </div>
@@ -160,6 +183,16 @@ const faqItems = [
     transition: all var(--transition-long);
   }
 
+  .content-wrapper p {
+    margin: 0 0 var(--px-16);
+    white-space: pre-line;
+    line-height: 1.6;
+  }
+
+  .content-wrapper p:last-child {
+    margin-bottom: 0;
+  }
+
   .accordion-item.active .content-wrapper {
     opacity: 1;
     transform: translateY(0);
@@ -196,52 +229,59 @@ const faqItems = [
 </style>
 
 <script>
-  function initFAQAccordion() {
-    const accordionContainer = document.querySelector('.faq-container');
+  let faqAccordionAbort: AbortController | null = null;
 
+  function initFAQAccordion() {
+    faqAccordionAbort?.abort();
+    const accordionContainer = document.querySelector(".faq-container");
     if (!accordionContainer) return;
 
-    accordionContainer.addEventListener('click', e => {
-      const button = (e.target as HTMLElement).closest('.accordion-button');
+    faqAccordionAbort = new AbortController();
+    const { signal } = faqAccordionAbort;
 
-      if (!button) return;
+    accordionContainer.addEventListener(
+      "click",
+      (e) => {
+        const button = (e.target as HTMLElement).closest(".accordion-button");
+        if (!button) return;
 
-      const item = button.closest('.accordion-item');
-      const content = item?.querySelector<HTMLElement>('.accordion-content');
+        const item = button.closest(".accordion-item");
+        const content = item?.querySelector<HTMLElement>(".accordion-content");
 
-      if (!item || !content) return;
+        if (!item || !content) return;
 
-      const isActive = item.classList.contains('active');
+        const isActive = item.classList.contains("active");
 
-      document.querySelectorAll('.accordion-item.active').forEach(accItem => {
-        const accContent =
-          accItem.querySelector<HTMLElement>('.accordion-content');
-        const accButton = accItem.querySelector('.accordion-button');
+        document.querySelectorAll(".accordion-item.active").forEach((accItem) => {
+          const accContent = accItem.querySelector<HTMLElement>(".accordion-content");
+          const accButton = accItem.querySelector<HTMLButtonElement>(".accordion-button");
 
-        if (!accContent || !accButton) return;
+          if (!accContent || !accButton) return;
 
-        if (accItem !== item) {
-          accItem.classList.remove('active');
-          accContent.style.height = '0';
-          accButton.setAttribute('aria-expanded', 'false');
-          accContent.setAttribute('aria-hidden', 'true');
+          if (accItem !== item) {
+            accItem.classList.remove("active");
+            accContent.style.height = "0";
+            accButton.setAttribute("aria-expanded", "false");
+            accContent.setAttribute("aria-hidden", "true");
+          }
+        });
+
+        if (!isActive) {
+          item.classList.add("active");
+          content.style.height = `${content.scrollHeight}px`;
+          button.setAttribute("aria-expanded", "true");
+          content.setAttribute("aria-hidden", "false");
+        } else {
+          item.classList.remove("active");
+          content.style.height = "0";
+          button.setAttribute("aria-expanded", "false");
+          content.setAttribute("aria-hidden", "true");
         }
-      });
-
-      if (!isActive) {
-        item.classList.add('active');
-        content.style.height = content.scrollHeight + 'px';
-        button.setAttribute('aria-expanded', 'true');
-        content.setAttribute('aria-hidden', 'false');
-      } else {
-        item.classList.remove('active');
-        content.style.height = '0';
-        button.setAttribute('aria-expanded', 'false');
-        content.setAttribute('aria-hidden', 'true');
-      }
-    });
+      },
+      { signal },
+    );
   }
 
   initFAQAccordion();
-  document.addEventListener('astro:after-swap', initFAQAccordion);
+  document.addEventListener("astro:after-swap", initFAQAccordion);
 </script>

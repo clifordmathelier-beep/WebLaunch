@@ -26,25 +26,43 @@ const socialImageURL = new URL(
     Astro.url.origin,
 ).href;
 
+const siteBaseUrl = SITE.CANONICAL_URL.replace(/\/?$/, "/");
+const organizationId = `${siteBaseUrl}#organization`;
+const websiteId = `${siteBaseUrl}#website`;
+const sameAs = SOCIALS.map((s) => s.HREF).filter(Boolean);
+
+const schemaGraph = [
+    {
+        "@type": "Organization",
+        "@id": organizationId,
+        name: companyName,
+        legalName,
+        url: siteBaseUrl,
+        email: SITE.EMAIL,
+        telephone: SITE.TELEPHONE,
+        sameAs,
+    },
+    {
+        "@type": "WebSite",
+        "@id": websiteId,
+        name: companyName,
+        url: siteBaseUrl,
+        description: SITE.DESCRIPTION,
+        publisher: { "@id": organizationId },
+    },
+    {
+        "@type": "WebPage",
+        "@id": `${canonicalURL}#webpage`,
+        name: title,
+        url: canonicalURL,
+        description,
+        isPartOf: { "@id": websiteId },
+    },
+];
+
 const schemaData = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: `${title}`,
-    url: `${canonicalURL}`,
-    description: `${description}`,
-    isPartOf: {
-        "@type": "WebSite",
-        name: `${companyName}`,
-        url: `${canonicalURL}`,
-        publisher: {
-            "@type": "Organization",
-            name: `${companyName}`,
-            legalName: legalName,
-            url: `${canonicalURL}`,
-            "@id": `${canonicalURL}`,
-            sameAs: SOCIALS.map((social) => social.HREF),
-        },
-    },
+    "@graph": schemaGraph,
 };
 ---
 
