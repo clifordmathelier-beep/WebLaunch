@@ -1,10 +1,10 @@
 (function () {
+    try {
+        localStorage.removeItem("theme");
+    } catch (e) {}
     function themeFromStorage() {
-        var saved = localStorage.getItem("theme");
-        var prefersDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-        ).matches;
-        return saved ?? (prefersDark ? "dark" : "light");
+        var saved = sessionStorage.getItem("theme");
+        return saved === "dark" || saved === "light" ? saved : "light";
     }
     document.documentElement.setAttribute("data-theme", themeFromStorage());
     if (window.__oneSpaceThemeNavListeners) return;

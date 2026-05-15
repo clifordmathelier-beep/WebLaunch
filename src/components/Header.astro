@@ -541,7 +541,7 @@ const contactActive = pathLower === "/contact";
         const applyTheme = (theme: string) => {
             document.documentElement.setAttribute("data-theme", theme);
             btn.setAttribute("aria-pressed", String(theme === "dark"));
-            localStorage.setItem("theme", theme);
+            sessionStorage.setItem("theme", theme);
         };
 
         // Sync button state with current theme on each page load
