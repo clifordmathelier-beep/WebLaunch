@@ -4,17 +4,17 @@ lastUpdated: '07-04-2025'
 ---
 
 > **Note:** This is just an example Terms of Service for a portfolio website
-> built with Astro and hosted on Cloudflare. The license part still applies.
+> built with Astro and hosted on Vercel. The license part still applies.
 
 Welcome to Multi Clarity, LLC.  
-These Terms of Service outline the rules and regulations for the use of One
-Space Away Interiors, LLC's website.
+These Terms of Service outline the rules and regulations for the use of Multi
+Clarity, LLC's website.
 
 **Multi Clarity, LLC** is located at:
 
 **123 Orange Ave, Suite 200  
 Orlando, FL 32801  
-California (CA), United States**
+United States**
 
 By accessing this website, we assume you accept these Terms of Service in full.
 Do not continue to use Multi Clarity, LLC's website if you do not
@@ -25,8 +25,8 @@ Statement, and the Disclaimer Notice, as well as any or all agreements:
 
 - **"Client", "You", "Your"** refer to you, the person accessing this website
   and accepting the Company's Terms of Service.
-- **"The Company", "Ourselves", "We", "Our", "Us"** refer to One Space Away
-  Interiors, LLC.
+- **"The Company", "Ourselves", "We", "Our", "Us"** refer to Multi Clarity,
+  LLC.
 - **"Party", "Parties", or "Us"** refer to both the Client and ourselves, or
   either the Client or ourselves.
 
@@ -54,17 +54,17 @@ partners may also use cookies.
 Unless otherwise stated, Multi Clarity, LLC and/or its licensors own
 the intellectual property rights for all material on our website. All
 intellectual property rights are reserved. You may view and/or print pages from
-[one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/) for your
+[web-launch-steel.vercel.app](https://web-launch-steel.vercel.app/) for your
 own personal use, subject to the restrictions set out in these Terms of Service.
 
 You must not:
 
 - Republish material from
-  [one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/)
+  [web-launch-steel.vercel.app](https://web-launch-steel.vercel.app/)
 - Sell, rent, or sub-license material from
-  [one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/)
+  [web-launch-steel.vercel.app](https://web-launch-steel.vercel.app/)
 - Reproduce, duplicate, or copy material from
-  [one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/)
+  [web-launch-steel.vercel.app](https://web-launch-steel.vercel.app/)
 - Redistribute content from Multi Clarity, LLC (unless content is
   specifically made for redistribution)
 
@@ -73,8 +73,8 @@ You must not:
 This Agreement shall begin on the date hereof.
 
 Certain parts of this website offer the opportunity for users to post and
-exchange opinions, information, material, and data ("Comments"). One Space Away
-Interiors, LLC does not screen, edit, publish, or review Comments prior to their
+exchange opinions, information, material, and data ("Comments"). Multi Clarity,
+LLC does not screen, edit, publish, or review Comments prior to their
 appearance on the website, and Comments do not reflect the views or opinions of
 Multi Clarity, LLC, its agents, or affiliates. Comments reflect the
 view and opinion of the person who posts such view or opinion. To the extent

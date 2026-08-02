@@ -4,7 +4,7 @@ lastUpdated: '07-04-2025'
 ---
 
 > **Note:** This is just an example privacy policy for a website built with
-> Astro and hosted on Cloudflare.
+> Astro and hosted on Vercel.
 
 ## Your Privacy Is Important To Us
 
@@ -18,8 +18,8 @@ United States
 It is Multi Clarity, LLC's policy to respect your privacy regarding
 any information we may collect while operating our website. This Privacy Policy
 applies to
-[one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/)
-(hereinafter, "us", "we", or "one-space-away-html.pages.dev"). We respect your
+[web-launch-steel.vercel.app](https://web-launch-steel.vercel.app/)
+(hereinafter, "us", "we", or "web-launch-steel.vercel.app"). We respect your
 privacy and are committed to protecting any personally identifiable information
 you may provide us through the Website. This Privacy Policy explains what
 information may be collected on our Website, how we use this information, and
@@ -64,8 +64,8 @@ Multi Clarity, LLC discloses potentially personally-identifying
 information only to those employees, contractors, and affiliated organizations
 that:
 
-- **(i)** Need to know that information in order to process it on One Space Away
-  Interiors, LLC's behalf or to provide services available on our website.
+- **(i)** Need to know that information in order to process it on Multi Clarity,
+  LLC's behalf or to provide services available on our website.
 - **(ii)** Have agreed not to disclose it to others.
 
 Some of those employees, contractors, and affiliated organizations may be
@@ -76,11 +76,11 @@ than to its employees, contractors, and affiliated organizations, as described
 above, Multi Clarity, LLC discloses potentially
 personally-identifying information only in response to a subpoena, court order,
 or other governmental request, or when we believe in good faith that disclosure
-is reasonably necessary to protect the property or rights of One Space Away
-Interiors, LLC, third parties, or the public at large.
+is reasonably necessary to protect the property or rights of Multi Clarity,
+LLC, third parties, or the public at large.
 
 If you are a registered user of
-[one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/) and have
+[web-launch-steel.vercel.app](https://web-launch-steel.vercel.app/) and have
 supplied your email address, we may occasionally send you an email to tell you
 about new features, solicit your feedback, or keep you updated on what's going
 on with Multi Clarity, LLC and our products. We primarily use our
@@ -102,7 +102,7 @@ appropriate advertising, and store your preferences on your computer.
 A cookie is a string of information that a website stores on a visitor's
 computer, and that the visitor's browser provides to the website each time the
 visitor returns. We use cookies to help identify and track visitors, their usage
-of [one-space-away-html.pages.dev](https://multi-clarity-orlando.pages.dev/), and
+of [web-launch-steel.vercel.app](https://web-launch-steel.vercel.app/), and
 their website access preferences. Visitors who do not wish to have cookies
 placed on their computers should set their browsers to refuse cookies. However,
 please note that certain features of the website may not function properly

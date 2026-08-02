@@ -7,7 +7,7 @@ export const SITE: Site = {
   DESCRIPTION: 'Discover strategies to empower your children and navigate development smoothly.',
   CANONICAL_URL: import.meta.env.DEV
     ? 'http://localhost:4321'
-    : 'https://multi-clarity-orlando.pages.dev',
+    : 'https://web-launch-steel.vercel.app',
   LOCALE: 'en',
   TELEPHONE: '(617) 651-0615',
   EMAIL: 'drchristineandre@gmail.com',

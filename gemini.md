@@ -1,10 +1,10 @@
-# Gemini Agent Context — One Space Away (WebLaunch)
+# Gemini Agent Context — Multi Clarity (WebLaunch)
 
 > This file provides context for Google Gemini agents (Gemini CLI, Gemini Code Assist, etc.) working on this project. For Claude Code context see `CLAUDE.md`.
 
 ## What This Project Is
 
-**One Space Away** is a static marketing website for an interior design service. It is built with **Astro 6** (static output, no server-side rendering), uses **pnpm**, and deploys to **Cloudflare Pages**.
+**Multi Clarity** (WebLaunch) is a static marketing website. It is built with **Astro 6** (static output, no server-side rendering), uses **pnpm**, and deploys to **Vercel** at `https://web-launch-steel.vercel.app`.
 
 ## Tech Stack at a Glance
 
@@ -16,7 +16,7 @@
 | Carousel | Swiper.js 11 |
 | Images | Astro `<Image>` (local) or Cloudinary CDN (optional) |
 | Fonts | Local WOFF2 via Astro font provider |
-| Deployment | Cloudflare Pages |
+| Deployment | Vercel (`https://web-launch-steel.vercel.app`) |
 | Package manager | pnpm |
 
 ## Repository Layout
@@ -84,7 +84,7 @@ All site-wide constants (name, contact, canonical URL, social links) live in `sr
 
 ## Content Security Policy
 
-CSP is **build-time only** (Astro injects it at build; dev server has no CSP). The runtime CSP for Cloudflare is in `public/_headers`. If you add a new external resource (CDN, font, embed), update both:
+CSP is **build-time only** (Astro injects it at build; dev server has no CSP). Vercel uses the build-injected CSP; `public/_headers` is for Cloudflare if needed. If you add a new external resource (CDN, font, embed), update:
 1. The `security.csp.directives` array in `astro.config.mjs`
 2. The corresponding header line in `public/_headers`
 

@@ -1,12 +1,12 @@
-# CLAUDE.md — One Space Away (WebLaunch)
+# CLAUDE.md — Multi Clarity (WebLaunch)
 
 ## Project Overview
 
-**One Space Away** is a static Astro 6 website template for interior designers. It is a single-page site with anchor-nav sections, Swiper carousels, a contact form, and Cloudflare-optimized security headers.
+**Multi Clarity** is a static Astro 6 marketing site with anchor-nav sections, Swiper carousels, a contact form, and security headers for static hosting.
 
 - **Framework:** Astro 6.0 (static output)
 - **Package manager:** pnpm
-- **Deployment target:** Cloudflare Pages
+- **Deployment target:** Vercel (`https://web-launch-steel.vercel.app`)
 - **Language:** TypeScript + Astro components
 - **Styling:** Vanilla CSS with a custom design-system variable layer (no Tailwind)
 
@@ -101,10 +101,11 @@ Then swap `<Image>` imports for `<CldImage src="your-public-id" ... />`.
 
 ## Deployment
 
-**Cloudflare Pages** (primary):
-- Push to `main` triggers a build via `pnpm build`.
-- Security headers live in `public/_headers`.
+**Vercel** (primary):
+- Push to `main` triggers a Vercel production deploy.
+- Canonical URL: `SITE.CANONICAL_URL` in `src/consts.ts` → `https://web-launch-steel.vercel.app`.
+- Build CSP is injected by Astro at build time (`astro.config.mjs`).
 
-**Vercel / Netlify**:
-- Move `_headers` rules to `vercel.json` or `netlify.toml`.
-- No other changes needed.
+**Cloudflare Pages / Netlify**:
+- `public/_headers` covers Cloudflare runtime headers.
+- Move `_headers` rules to `vercel.json` or `netlify.toml` if those hosts need them.
