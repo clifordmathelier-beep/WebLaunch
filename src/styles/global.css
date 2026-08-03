@@ -33,6 +33,16 @@ p {
   margin: 0 auto;
 }
 
+/* Band backgrounds live here (not in page-scoped styles) so ClientRouter
+   soft navigations keep the correct homepage/services section colors. */
+.band-cream {
+  background-color: var(--color-band-cream);
+}
+
+.band-warm {
+  background-color: var(--color-band-warm);
+}
+
 .section-tag {
   display: inline-block;
   margin-bottom: var(--px-24);
@@ -78,29 +88,36 @@ p {
   font-size: var(--text-xs);
   letter-spacing: 0.085em;
   font-weight: 700;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: transform var(--transition-short);
+  /* Kill legacy wipe/hover animation (and any stale ClientRouter CSS) */
+  position: static;
+  overflow: visible;
+  transition: none;
+  transform: none;
 }
 
-.btn--primary:before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 200%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scale(0.7) translateY(55%);
-  background: var(--color-secondary);
-  border-radius: 100%;
-  transition: all var(--transition-medium);
-  z-index: -1;
+.btn--primary::before,
+.btn--primary::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  transition: none !important;
+  transform: none !important;
 }
 
-.btn--primary:active:before {
-  transform: scaleX(2) scaleY(1) translateY(-15%);
+a.btn--primary:hover,
+a.btn--primary:focus,
+a.btn--primary:active,
+button.btn--primary:hover,
+button.btn--primary:focus,
+button.btn--primary:active,
+.btn--primary:hover,
+.btn--primary:focus,
+.btn--primary:active {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .btn--outline {
@@ -119,15 +136,21 @@ p {
   color: var(--color-text-primary);
   background-color: var(--color-white);
   border: 1px solid var(--color-border-strong);
-  transition:
-    background-color var(--transition-short),
-    border-color var(--transition-short),
-    color var(--transition-short);
+  transition: none;
 }
 
-.btn--outline:hover {
-  border-color: var(--color-text-primary);
-  background-color: rgba(255, 255, 255, 0.95);
+a.btn--outline:hover,
+a.btn--outline:focus,
+a.btn--outline:active,
+.btn--outline:hover,
+.btn--outline:focus,
+.btn--outline:active {
+  background-color: var(--color-white) !important;
+  border-color: var(--color-border-strong) !important;
+  color: var(--color-text-primary) !important;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .btns--secondary {
@@ -140,10 +163,6 @@ p {
   position: relative;
   overflow: hidden;
   padding-block: var(--px-6);
-  transition:
-    transform 0.5s var(--ease-elastic-1),
-    opacity 0.5s var(--ease-elastic-1),
-    color 0.2s var(--ease-default);
 }
 
 .btn--secondary-hovered {
@@ -152,16 +171,6 @@ p {
   left: 0;
   opacity: 0;
   transform: translateY(150%) translateZ(0.001px) skewY(10deg);
-}
-
-.btns--secondary:active .btn--secondary-unhovered {
-  opacity: 0;
-  transform: translateY(-150%) translateZ(0.001px) skewY(-10deg);
-}
-
-.btns--secondary:active .btn--secondary-hovered {
-  opacity: 1;
-  transform: translateY(0) translateZ(0.001px) skewY(0);
 }
 
 .indicator {
@@ -198,20 +207,6 @@ p {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .btn--primary:hover:before {
-    transform: scaleX(2) scaleY(1) translateY(-15%);
-  }
-
-  .btns--secondary:hover .btn--secondary-unhovered {
-    opacity: 0;
-    transform: translateY(-150%) translateZ(0.001px) skewY(-10deg);
-  }
-
-  .btns--secondary:hover .btn--secondary-hovered {
-    opacity: 1;
-    transform: translateY(0) translateZ(0.001px) skewY(0);
-  }
-
   .text-link:hover {
     text-decoration-color: transparent;
   }

@@ -1,0 +1,52 @@
+/* Loaded as a static stylesheet (not Vite page CSS) so navigations cannot drop it. */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  position: static;
+  overflow: visible;
+  transition: none;
+  transform: none;
+}
+
+.btn--primary::before,
+.btn--primary::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+a.btn--primary:hover,
+a.btn--primary:focus,
+a.btn--primary:active,
+button.btn--primary:hover,
+button.btn--primary:focus,
+button.btn--primary:active,
+.btn--primary:hover,
+.btn--primary:focus,
+.btn--primary:active {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.btn--outline {
+  transition: none;
+}
+
+a.btn--outline:hover,
+a.btn--outline:focus,
+a.btn--outline:active,
+.btn--outline:hover,
+.btn--outline:focus,
+.btn--outline:active {
+  background-color: var(--color-white) !important;
+  border-color: var(--color-border-strong) !important;
+  color: var(--color-text-primary) !important;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}

@@ -77,6 +77,9 @@
     --color-secondary: var(--color-mint-tint);
     --color-background: #fdf8f4;
     --color-bg-secondary: #fffaf6;
+    /* Page section bands (kept global for ClientRouter navigations) */
+    --color-band-cream: var(--color-background);
+    --color-band-warm: #f5efe8;
     --color-white: #ffffff;
     --color-text-primary: var(--color-navy);
     --color-text-secondary: #5b6d80;
@@ -136,6 +139,8 @@
     --color-header-text: #f4f7fb;
     --color-background: #122430;
     --color-bg-secondary: #1a3344;
+    --color-band-cream: var(--color-background);
+    --color-band-warm: color-mix(in srgb, var(--color-bg-secondary) 88%, var(--color-warm-beige) 12%);
     --color-white: #0f1e2a;
     --color-text-primary: #f4f7fb;
     --color-text-secondary: rgba(244, 247, 251, 0.72);

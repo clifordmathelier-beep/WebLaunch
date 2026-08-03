@@ -1,8 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import familyImage from "/src/assets/images/family1.jpg";
 ---
-<section id="hero" class="hero">
+<section id="hero" class="hero band-cream">
     <div class="section-container hero-container">
         <div class="hero-content">
             <h1 class="hero-title">
@@ -12,46 +10,29 @@ import familyImage from "/src/assets/images/family1.jpg";
             <p class="hero-subtitle">
                 Gain professional insight and compassionate support for your child's developmental path. Let's find confidence in the journey together.
             </p>
-            <div class="hero-cta">
-                <a href="/Contact" class="btn btn--primary hero-cta-primary">
-                    Book a consultation
-                    <span class="hero-cta-arrow" aria-hidden="true">→</span>
-                </a>
-                <a href="/Services" class="btn btn--outline hero-cta-secondary">
-                    Our services
-                </a>
-            </div>
-        </div>
-        <div class="video-wrapper">
-            <Image
-                class="media"
-                src={familyImage}
-                alt="Happy family"
-                width={familyImage.width}
-                height={familyImage.height}
-            />
         </div>
     </div>
 </section>
 
 <style>
     .hero {
-        min-height: 100vh;
-        padding-block: 6.688rem var(--px-56);
+        padding-block: 8.5rem var(--px-56);
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     .hero-container {
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--px-64);
-        align-items: center;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-content {
-        max-width: 37.5rem;
+        max-width: 44rem;
+        width: 100%;
+        text-align: center;
+        margin-inline: auto;
     }
 
     .hero-title {
@@ -83,28 +64,10 @@ import familyImage from "/src/assets/images/family1.jpg";
         font-family: var(--font-sans);
         font-size: clamp(var(--text-lg), 1.5vw, var(--text-xl));
         font-weight: 400;
-        margin-bottom: var(--px-48);
+        margin: 0 auto;
+        max-width: 36rem;
         line-height: 1.6;
         color: #6b7280;
-        opacity: 1;
-    }
-
-    .hero-cta-primary {
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        gap: var(--px-10);
-        box-shadow: 0 4px 14px rgba(26, 67, 94, 0.22);
-    }
-
-    .hero-cta-arrow {
-        font-size: 1.1em;
-        line-height: 1;
-        font-weight: 600;
-    }
-
-    .hero-cta-secondary {
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
     }
 
     :global([data-theme="dark"]) .hero-title-line {
@@ -115,56 +78,13 @@ import familyImage from "/src/assets/images/family1.jpg";
         color: var(--color-text-secondary);
     }
 
-    .hero-cta {
-        display: flex;
-        gap: var(--px-16) var(--px-48);
-        flex-wrap: wrap;
-    }
-
-    .video-wrapper {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    @media screen and (max-width: 64rem) {
-        .hero-container {
-            gap: var(--px-32);
-        }
-
-        .hero-content {
-            max-width: 100%;
-        }
-
-        .hero-title {
-            line-height: 1.2;
-        }
-    }
-
     @media screen and (max-width: 59.375rem) {
         .hero {
-            min-height: auto;
-        }
-
-        .hero-container {
-            grid-template-columns: 1fr;
-            gap: var(--px-32);
+            padding-block: 7.5rem var(--px-40);
         }
 
         .hero-title {
             margin-bottom: var(--px-24);
-        }
-
-        .hero-subtitle {
-            margin-bottom: var(--px-36);
-        }
-
-        .hero-cta {
-            column-gap: var(--px-32);
-        }
-
-        .video-wrapper {
-            min-height: 18.75rem;
         }
     }
 </style>

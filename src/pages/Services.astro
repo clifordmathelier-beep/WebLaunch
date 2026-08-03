@@ -1,239 +1,351 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { Image } from "astro:assets";
-import cadImage from "/src/assets/images/CAD.jpg";
-import multilangImage from "/src/assets/images/multilang.jpg";
-import pcitImage from "/src/assets/images/PCIT.jpg";
-import oneTimeImage from "/src/assets/images/onetime.jpg";
-import momDaughtImage from "/src/assets/images/momdaught.jpg";
+import { Image } from 'astro:assets';
+import { SITE } from '@consts';
+import consultImage from '/src/assets/images/onetime.jpg';
+import caregiverImage from '/src/assets/images/PCIT.jpg';
+import therapyImage from '/src/assets/images/CAD.jpg';
 
-const services = [
-    {
-        id: 1,
-        title: "Child & Adolescent Development",
-        description:
-            "Guidance through key developmental milestones. We provide actionable strategies to handle behavioral challenges, emotional regulation, and transitions.",
-        image: {
-            src: cadImage,
-            alt: "Child and adolescent development support.",
-        },
-    },
-    {
-        id: 2,
-        title: "Bilingualism & Multicultural Dynamics",
-        description:
-            "Expert support for families navigating multiple languages and cultures. We help you create an environment where your child can thrive in their multicultural identity.",
-        image: {
-            src: multilangImage,
-            alt: "Bilingual and multicultural family support.",
-        },
-    },
-    {
-        id: 3,
-        title: "Parent-Child Interaction Therapy (PCIT)",
-        description:
-            "Specialized coaching to improve the quality of the parent-child relationship and teach parents specific skills to manage children's behavior problems.",
-        image: {
-            src: pcitImage,
-            alt: "Parent and child interaction coaching.",
-        },
-    },
-    {
-        id: 4,
-        title: "Cognitive Behavioral Therapy (CBT) & ACT",
-        description:
-            "Evidence-based therapeutic approaches tailored to help your child manage anxiety, navigate complex emotions, and develop strong social-emotional skills.",
-        image: {
-            src: momDaughtImage,
-            alt: "Therapeutic support for anxiety, emotions, and social-emotional skills.",
-        },
-    },
-    {
-        id: 5,
-        title: "One-Time Consultations",
-        description:
-            "A focused session designed to cut through confusion and conflicting advice. Perfect for gaining perspective and guidance on a specific parenting challenge without a long-term commitment.",
-        image: {
-            src: oneTimeImage,
-            alt: "Focused one-time parenting consultation.",
-        },
-    },
+const specialtyAreas = [
+  {
+    title: 'Anxiety',
+    description:
+      'Separation anxiety, social anxiety, selective mutism, and specific phobias (for example, needle phobia and procedure-related anxiety).',
+  },
+  {
+    title: 'Coping with medical conditions',
+    description:
+      'Support when a parent, child, or sibling is navigating a medical diagnosis — with guidance tailored to your family’s needs.',
+  },
+  {
+    title: 'Cultural and linguistic acculturation',
+    description:
+      'Help for youth and caregivers navigating cultural and linguistic transitions and the stress that can come with them.',
+  },
 ];
 
-const certifications = [
-    "Licensed Clinical Psychologist",
-    "Certified PCIT International Therapist",
-    "Specialist in Bilingual & Multicultural Development",
-    "Trusted Provider at Maven Clinic"
+const approaches = [
+  'Acceptance and Commitment Therapy (ACT)',
+  'Cognitive Behavioral Therapy (CBT)',
+  'Exposure and Response Prevention (ERP)',
+  'Mindfulness-Based Stress Reduction for Teens (MBSR-T)',
+  'Parent-Child Interaction Therapy (PCIT)',
+  'Supportive Parenting for Anxious Childhood Emotions (SPACE)',
+];
+
+const offerings = [
+  {
+    title: 'Parent / Caregiver Consultations',
+    paragraphs: [
+      'Specialized guidance for parents and caregivers of children (ages 4 and up) who are navigating life transitions, a new or existing medical diagnosis, or a suspected or diagnosed mental health condition.',
+      'These consultations focus on actionable steps and evidence-based strategies and resources for your family.',
+      'Initial consultations include a written summary of individualized recommendations tailored to your questions and concerns. Follow-up consultations are scheduled as needed.',
+    ],
+    image: {
+      src: consultImage,
+      alt: 'Parent consultation and guidance.',
+    },
+  },
+  {
+    title: 'Parent / Caregiver-only Therapy',
+    paragraphs: [
+      'Goal-oriented therapy for parents and caregivers of children (ages 4 and up) diagnosed with anxiety disorders or with a medical condition.',
+      'Sessions help parents learn specific evidence-based strategies to increase support, decrease accommodation behaviors, and develop healthy coping tools.',
+      'The goal is to improve the family’s quality of life.',
+    ],
+    image: {
+      src: caregiverImage,
+      alt: 'Caregiver-focused therapy support.',
+    },
+  },
+  {
+    title: 'Therapy for children, adolescents, and adults',
+    paragraphs: [
+      'Goal-oriented sessions for individuals (ages 7 and up) diagnosed with anxiety disorders or medical conditions.',
+      'Sessions teach evidence-based strategies to cope with anxiety, adjust to a medical condition, and improve quality of life.',
+    ],
+    image: {
+      src: therapyImage,
+      alt: 'Therapy for children, adolescents, and adults.',
+    },
+  },
 ];
 ---
 
-<BaseLayout>
-    <section id="services" class="process" style="padding-top: 10rem;">
-        <div class="section-container">
-            <div class="process-content">
-                <span class="section-tag">SERVICES</span>
-                <h2 class="section-title">Our Services & Expertise</h2>
-                
-                <div class="certifications-section">
-                    <h3 class="section-subtitle">Certifications & Affiliations</h3>
-                    <ul class="cert-list">
-                        {certifications.map(cert => (
-                            <li class="cert-item">
-                                <span class="cert-dot" aria-hidden="true"></span>
-                                {cert}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div class="process-steps" style="margin-top: 4rem;">
-                    {
-                        services.map((service) => (
-                            <div class="process-step">
-                                <div class="process-step-content">
-                                    <h3 class="section-subtitle process-step-title">
-                                        {service.title}
-                                    </h3>
-                                    <p class="process-step-description">
-                                        {service.description}
-                                    </p>
-                                </div>
-                                <div class="process-step-image-wrapper">
-                                    <Image
-                                        src={service.image.src}
-                                        alt={service.image.alt}
-                                        width={service.image.src.width}
-                                        height={service.image.src.height}
-                                    />
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
+<BaseLayout
+  title={`${SITE.COMPANY_NAME}: Services`}
+  description="Culturally responsive, evidence-based therapy and parent consultations for youth and caregivers."
+>
+  <div class="services-page">
+    <section class="services-band band-cream services-band--intro">
+      <div class="section-container">
+        <div class="services-intro-block">
+          <h1 class="section-title">Services</h1>
+          <p class="services-intro">
+            I provide culturally responsive and linguistically sensitive treatment for youth
+            and caregivers navigating life transitions, health and medical concerns, and
+            psychological difficulties.
+          </p>
         </div>
+      </div>
     </section>
+
+    <section class="services-band band-warm" aria-labelledby="specialty-heading">
+      <div class="section-container">
+        <h2 id="specialty-heading" class="services-heading">Specialty areas</h2>
+        <div class="specialty-grid">
+          {
+            specialtyAreas.map((area) => (
+              <article class="specialty-card">
+                <h3 class="specialty-title">{area.title}</h3>
+                <p class="specialty-description">{area.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="services-band band-cream" aria-labelledby="approach-heading">
+      <div class="section-container">
+        <div class="approach-block">
+          <h2 id="approach-heading" class="services-heading">My treatment approach</h2>
+          <p class="services-body">
+            I use evidence-based therapy tailored to each child, adolescent, and family,
+            based on their linguistic preferences, cultural context and background, and
+            medical needs.
+          </p>
+          <p class="services-body">
+            My work draws from the following evidence-based approaches:
+          </p>
+          <ul class="approach-list">
+            {
+              approaches.map((item) => (
+                <li class="approach-item">
+                  <span class="approach-dot" aria-hidden="true"></span>
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-band band-warm" aria-labelledby="offerings-heading">
+      <div class="section-container">
+        <h2 id="offerings-heading" class="services-heading">How we can work together</h2>
+        <div class="offering-list">
+          {
+            offerings.map((item, index) => (
+              <article class:list={['offering', { 'offering--reverse': index % 2 === 1 }]}>
+                <div class="offering-content">
+                  <h3 class="offering-title">{item.title}</h3>
+                  {item.paragraphs.map((paragraph) => (
+                    <p class="offering-description">{paragraph}</p>
+                  ))}
+                </div>
+                <div class="offering-image">
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    width={item.image.src.width}
+                    height={item.image.src.height}
+                  />
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
 
 <style>
-    .certifications-section {
-        margin-top: 2rem;
-        padding: 2rem;
-        background: var(--color-bg-secondary);
-        border-radius: var(--radius-lg);
-    }
-    .cert-list {
-        list-style: none;
-        padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-    .cert-item {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-size: var(--text-base);
-        color: var(--color-text-dark);
-    }
-    .cert-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: var(--color-focus);
-        flex-shrink: 0;
+  .services-band {
+    padding-block: var(--px-64);
+  }
+
+  .services-band--intro {
+    padding-top: 10rem;
+  }
+
+  .services-intro-block {
+    max-width: 48rem;
+  }
+
+  .services-intro {
+    margin: 0;
+    font-size: var(--text-lg);
+    line-height: 1.65;
+    color: var(--color-text-dark);
+  }
+
+  .services-heading {
+    margin: 0 0 var(--px-32);
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.6vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+  }
+
+  .approach-block {
+    max-width: 48rem;
+  }
+
+  .services-body {
+    margin: 0 0 var(--px-16);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+  }
+
+  .specialty-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--px-20);
+  }
+
+  .specialty-card {
+    padding: var(--px-24);
+    background: color-mix(in srgb, var(--color-background) 70%, #ffffff 30%);
+    border-radius: var(--radius-lg);
+  }
+
+  :global([data-theme="dark"]) .specialty-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+  }
+
+  .specialty-title {
+    margin: 0 0 var(--px-12);
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .specialty-description {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .approach-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--px-20) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--px-12);
+  }
+
+  .approach-item {
+    display: flex;
+    align-items: center;
+    gap: var(--px-12);
+    font-size: inherit;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    opacity: 0.8;
+  }
+
+  .approach-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-focus);
+    flex-shrink: 0;
+  }
+
+  .offering-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .offering-image :global(picture) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .offering-image :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .offering-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--px-64);
+  }
+
+  .offering {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--px-64);
+    align-items: center;
+  }
+
+  .offering--reverse .offering-image {
+    order: -1;
+  }
+
+  .offering-title {
+    margin: 0 0 var(--px-12);
+    font-family: var(--font-serif);
+    font-size: 1.313rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .offering-description {
+    margin: 0 0 var(--px-16);
+    line-height: 1.65;
+    color: var(--color-text-dark);
+  }
+
+  .offering-description:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 64rem) {
+    .specialty-grid {
+      grid-template-columns: 1fr;
     }
 
-    .process-steps {
-        display: flex;
-        flex-direction: column;
-        gap: var(--px-64);
+    .offering {
+      gap: var(--px-32);
+    }
+  }
+
+  @media screen and (max-width: 48rem) {
+    .services-band {
+      padding-block: var(--px-48);
     }
 
-    .process-step {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--px-64);
-        align-items: center;
+    .offering {
+      grid-template-columns: 1fr;
+      gap: var(--px-28);
     }
 
-    .process-step:nth-child(even) .process-step-image-wrapper {
-        grid-column: 1;
+    .offering--reverse .offering-image {
+      order: 0;
     }
 
-    .process-step:nth-child(even) .process-step-content {
-        grid-column: 2;
+    .offering-content {
+      order: -1;
     }
-
-    .process-step-title {
-        font-size: 1.313rem;
-    }
-
-    .process-step-description {
-        max-width: 31.25rem;
-    }
-
-    .process-step-image-wrapper {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        margin-inline: auto;
-        overflow: hidden;
-        border-radius: var(--radius-lg);
-        background-color: var(--color-bg-secondary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .process-step-image-wrapper :global(picture) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        min-height: 0;
-    }
-
-    .process-step-image-wrapper :global(img) {
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        object-position: center center;
-    }
-
-    @media screen and (max-width: 64rem) {
-        .process-step {
-            gap: var(--px-32);
-        }
-        .cert-list {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media screen and (max-width: 48rem) {
-        .process-steps {
-            gap: var(--px-36);
-        }
-
-        .process-step {
-            grid-template-columns: 1fr;
-            gap: var(--px-32);
-        }
-
-        .process-step:nth-child(even) .process-step-image-wrapper,
-        .process-step:nth-child(even) .process-step-content {
-            grid-column: auto;
-        }
-
-        .process-step-content {
-            order: -1;
-        }
-
-        .process-step-description {
-            max-width: 100%;
-        }
-    }
+  }
 </style>

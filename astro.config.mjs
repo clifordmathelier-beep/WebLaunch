@@ -10,6 +10,11 @@ export default defineConfig({
   site: SITE.CANONICAL_URL,
   output: "static",
 
+  redirects: {
+    "/bio": "/#about-me",
+    "/about-me": "/#about-me",
+  },
+
   markdown: {
     syntaxHighlight: false,
   },

@@ -2,67 +2,30 @@
 const faqItems = [
   {
     id: 1,
-    question: 'What does a consultation with you look like?',
+    question: 'Do you accept insurance?',
     answer:
-      'It starts with a focused conversation — by video call or phone — where you share what you\'re navigating and what clarity would look like for you. I listen, ask the right questions, and by the end of the session you leave with a clear, actionable path forward.',
+      'I am not contracted with any insurance company at this time. Payment is required at the time of service. Parent consultation sessions are only eligible for insurance reimbursement if you already have a diagnosis. Diagnostic evaluations and therapy sessions may be eligible for insurance reimbursement if you have out-of-network benefits through your insurance carrier. I will provide you with a detailed receipt including diagnosis and session codes to submit to your insurance carrier to assist with reimbursement. Families who wish to utilize insurance benefits should ensure they understand their out-of-network benefits before beginning treatment.',
   },
   {
     id: 2,
-    question: 'Is this a one-time session or an ongoing programme?',
+    question: 'Do you meet in person or via telehealth?',
     answer:
-      'One session. That\'s the model. The goal is to give you enough clarity and concrete strategies in a single conversation that you can move forward with confidence on your own. No long-term commitment required.',
+      'At this time, all sessions are available virtually, via secure telehealth, as long as you are located in a state where I am currently licensed (Florida, Massachusetts, and PSYPACT states).',
   },
   {
     id: 3,
-    question: 'What kinds of challenges do parents bring to you?',
-    answer:
-      'Everything from navigating bilingual development and cultural identity questions, to behavioural concerns, developmental milestones, school readiness, sibling dynamics, and simply not knowing whether what you\'re seeing is typical. If it\'s keeping you up at night, it\'s worth talking about.',
-  },
-  {
-    id: 4,
-    question: 'How do you approach bilingual and multilingual families?',
-    answer:
-      'With real understanding — not just clinical knowledge. I\'ve lived and worked across multiple cultures and languages myself. I know that raising children across languages adds a layer of nuance that most parenting advice simply doesn\'t account for, and I tailor guidance specifically to your family\'s language context.',
-  },
-  {
-    id: 5,
-    question: 'My child hasn\'t been diagnosed with anything — can I still book a session?',
-    answer:
-      'Absolutely. You don\'t need a diagnosis, a referral, or a crisis to reach out. Most parents I work with are simply looking for informed, personalised guidance — the kind that\'s hard to find in a Google search.',
-  },
-  {
-    id: 6,
-    question: 'Do you provide an official diagnosis or meet with my child?',
-    answer:
-      'General parent consultations are 90 minutes and include a written report with individualized recommendations tailored to your questions and goals.\n\nThis service is not diagnostic. I do not provide a formal diagnosis for your child, and I do not meet with your child as part of this consultation model.\n\nIf your child already has a mental health or medical diagnosis and you are on a waitlist or are still seeking a provider, I can offer evidence-based resources (for example, books, workbooks, and podcasts) and help you explore provider options that fit your child\'s situation. This guidance does not replace a diagnostic evaluation and does not serve as a pre-treatment intake for therapy services.\n\nIf you suspect your child may have a clinical concern but has not yet been evaluated, and you would like parent-focused strategies to use at home or you are awaiting an evaluation, this consultation may be a good fit—within the boundaries described above.',
-  },
-  {
-    id: 7,
-    question: 'Do you offer virtual consultations?',
-    answer:
-      'Yes. All sessions are available virtually, so it doesn\'t matter where you\'re based. Most parents actually find video calls easier to fit around family life.',
-  },
-  {
-    id: 8,
-    question: 'What\'s your background and training?',
-    answer:
-      'I hold a PhD in Clinical Psychology from Suffolk University and trained at Boston Children\'s Hospital and Harvard Medical School. I\'m a Certified PCIT Therapist and have over 15 years of experience working with children, adolescents, and families across clinical and research settings.',
-  },
-  {
-    id: 9,
     question: 'How do I get started?',
     answer:
-      'Just reach out by email or phone — you\'ll find the details in the contact section below. We\'ll find a time that works for you and take it from there.',
+      'Visit the Contact page and use the new client link to complete the Simple Practice request form, or call the number listed there. We\'ll find a time for a brief phone call and take it from there.',
   },
 ];
 ---
 
 <section id="faq" class="faq">
   <div class="section-container faq-container">
-    <div class="faq-header">
-      <span class="section-tag">FAQ</span>
-      <h2 class="section-title">We’ve got answers.</h2>
-    </div>
+    <header class="faq-header">
+      <h1 class="section-title faq-title">FAQ</h1>
+    </header>
 
     <div class="faq-content">
       <div class="accordion">
@@ -115,15 +78,21 @@ const faqItems = [
 <style>
   .faq-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(10rem, 0.85fr) minmax(0, 1.15fr);
     gap: var(--px-64);
     align-items: start;
   }
 
   .faq-header {
-    position: sticky;
-    top: var(--px-32);
-    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: var(--px-48);
+  }
+
+  .faq-title {
+    text-align: center;
+    margin: 0;
   }
 
   .accordion {
@@ -214,16 +183,12 @@ const faqItems = [
   @media (max-width: 48rem) {
     .faq-container {
       grid-template-columns: 1fr;
-      gap: 0;
+      gap: var(--px-28);
     }
 
     .faq-header {
-      position: static;
-      max-width: none;
-    }
-
-    .section-title {
-      margin-bottom: var(--px-44);
+      padding-top: var(--px-16);
+      justify-content: center;
     }
   }
 </style>

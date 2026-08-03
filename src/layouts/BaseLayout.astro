@@ -5,7 +5,6 @@ import "@styles/global.css";
 
 import { Font } from "astro:assets";
 import { SITE, SOCIALS } from "@consts";
-import { ClientRouter } from "astro:transitions";
 import Header from "components/Header.astro";
 import Footer from "@components/Footer.astro";
 
@@ -38,7 +37,6 @@ const schemaGraph = [
         name: companyName,
         legalName,
         url: siteBaseUrl,
-        email: SITE.EMAIL,
         telephone: SITE.TELEPHONE,
         sameAs,
     },
@@ -87,7 +85,8 @@ const schemaData = {
 
         <meta name="generator" content={Astro.generator} />
 
-        <ClientRouter />
+        <!-- Static stylesheet: survives full navigations; not managed by view transitions -->
+        <link rel="stylesheet" href="/btn-no-hover.css" />
 
         <!-- General Meta Tags -->
         <title>{title}</title>

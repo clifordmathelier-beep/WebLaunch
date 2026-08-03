@@ -10,9 +10,10 @@ export const SITE: Site = {
     : 'https://web-launch-steel.vercel.app',
   LOCALE: 'en',
   TELEPHONE: '(617) 651-0615',
-  EMAIL: 'drchristineandre@gmail.com',
-  ADDRESS: '123 Orange Ave, Suite 200, Orlando, FL 32801',
-  BOOKING_PORTAL_URL: 'https://www.simplepractice.com',
+  /** Placeholder — replace with Simple Practice new-client request form URL */
+  NEW_CLIENT_INTAKE_URL: 'https://www.simplepractice.com',
+  /** Placeholder — replace with Simple Practice existing-client portal URL */
+  EXISTING_CLIENT_PORTAL_URL: 'https://www.simplepractice.com',
   FOOTER_MISSION:
     'Providing compassionate parent consultations and developmental resources. Our mission is to normalize the journey and bring clarity to childhood development.',
 

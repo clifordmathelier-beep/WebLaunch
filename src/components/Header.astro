@@ -6,7 +6,6 @@ const pathNorm =
 const pathLower = pathNorm.toLowerCase();
 const homeActive = pathNorm === "/";
 const servicesActive = pathLower.startsWith("/services");
-const bioActive = pathLower === "/bio";
 const faqActive = pathLower === "/faq";
 const contactActive = pathLower === "/contact";
 ---
@@ -64,13 +63,6 @@ const contactActive = pathLower === "/contact";
                         aria-current={homeActive ? "page" : undefined}
                     >
                         Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/Bio" class:list={["nav-link", { "nav-link--active": bioActive }]}
-                        aria-current={bioActive ? "page" : undefined}
-                    >
-                        Bio
                     </a>
                 </li>
 
@@ -304,9 +296,36 @@ const contactActive = pathLower === "/contact";
         background-color: #e9967a;
     }
 
+    .desktop-cta,
+    .mobile-cta {
+        flex-shrink: 0;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .desktop-cta::before,
+    .desktop-cta::after,
+    .mobile-cta::before,
+    .mobile-cta::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    .desktop-cta:hover,
+    .desktop-cta:focus,
+    .desktop-cta:active,
+    .mobile-cta:hover,
+    .mobile-cta:focus,
+    .mobile-cta:active {
+        background-color: var(--color-primary) !important;
+        color: var(--color-white) !important;
+        filter: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
     .desktop-cta {
         display: inline-flex;
-        flex-shrink: 0;
     }
 
     .mobile-cta {

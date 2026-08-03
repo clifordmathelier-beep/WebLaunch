@@ -8,10 +8,10 @@ export type Site = {
   CANONICAL_URL: string;
   LOCALE?: string; // default en
   TELEPHONE: string;
-  EMAIL: string;
-  ADDRESS: string;
-  /** Client portal (e.g. Simple Practice) for booking */
-  BOOKING_PORTAL_URL?: string;
+  /** Simple Practice — new / interested client intake (placeholder until live) */
+  NEW_CLIENT_INTAKE_URL: string;
+  /** Simple Practice — existing client portal (placeholder until live) */
+  EXISTING_CLIENT_PORTAL_URL: string;
   /** Short mission blurb in the site footer */
   FOOTER_MISSION?: string;
   OG_IMAGE: string;
